@@ -7,12 +7,23 @@ const Usuario = require('../models/usuario');
 const { generarJWT } = require('../helpers/jwt');
 const getUsuarios = async (req, res)=>{
 
-    const usuarios = await Usuario.find({},'nombre email roles google');
+  const desde = Number(req.query.desde) || 0;
+  
+  const [usuarios, total]=  await Promise.all([
+     
+      Usuario.find({},'nombre email roles google img')
+      .skip(desde)
+      .limit(5),
+      Usuario.countDocuments()
+
+    ]);
+
 
     res.json({
         ok:true,
         usuarios,
-        uid:req.uid, //recuperamos el id del usuario que hace la peticion , lo traemos desde el midelware validar-jwt
+        total,
+        //uid:req.uid, //recuperamos el id del usuario que hace la peticion , lo traemos desde el midelware validar-jwt
     });
 
 }

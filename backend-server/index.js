@@ -16,6 +16,11 @@ app.use(cors());
 
 // lectura y parseo del body
 
+
+//carpeta publica
+
+app.use(express.static('public'));
+
 app.use(express.json());
 
     // Base de datos

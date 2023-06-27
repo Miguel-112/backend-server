@@ -7,7 +7,7 @@ const dbConection = async (    ) =>    {
         await  mongoose.connect(process.env.DB_CNN);
           console.log('DB onlined');
     } catch (error) {
-        throw new Error('Erro a la hora de iniciar la base de datos la BD ver logs');
+        throw new Error('Error a la hora de iniciar la base de datos la BD ver logs');
     }
 
 } 

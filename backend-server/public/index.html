@@ -15,7 +15,7 @@
     <script>
       var url = "http://localhost:3000/api/login/google";
       function handleCredentialResponse(response) {
-        //   console.log("Encoded JWT ID token: " + response.credential);
+           console.log("Encoded JWT ID token: " + response.credential);
         fetch(url, {
           method: "POST",
           headers: {
@@ -31,7 +31,7 @@
         google.accounts.id.initialize({
           client_id:
             "616115338227-aio6khd2tv3qt6mq1mlskpav1868145r.apps.googleusercontent.com",
-          callback: handleCredentialResponse,
+            callback: handleCredentialResponse,
         });
         google.accounts.id.renderButton(
           document.getElementById("buttonDiv"),

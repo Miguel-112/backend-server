@@ -71,7 +71,7 @@ const googleSignIn = async( req, res = response ) => {
                
             })
 
-            console.log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeeee");
+           
         } else {
             usuario = usuarioDB;
             usuario.google = true;
